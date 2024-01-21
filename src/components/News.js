@@ -14,13 +14,14 @@ export class News extends Component {
     category: PropTypes.string,
   }
 
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       articles:[],
       loading:false,
       page:1
     }
+    document.title = `NewsHub -  ${this.props.category[0].toUpperCase() + this.props.category.slice(1)}`;
   }
   async updateNews(){
     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=83d9a86f7e7c4b9a9b0ec6c96d9c4cb8&page=${this.state.page}&pageSize=15`
@@ -49,7 +50,7 @@ export class News extends Component {
   render() {
     return (
       <div className='container my-4 '>
-        <h2 className='mb-3 text-center'>NewsMonkey - Top Headlines</h2>
+        <h2 className='mb-3 text-center'>NewsMonkey - Top {this.props.category[0].toUpperCase() + this.props.category.slice(1)} Headlines</h2>
         {this.state.loading && <Loading />}
         <div className="row">
         { !this.state.loading && this.state.articles.map((element)=>{
