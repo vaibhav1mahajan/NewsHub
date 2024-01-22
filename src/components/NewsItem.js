@@ -7,10 +7,17 @@ export class NewsItem extends Component {
     return (
       <div>
         <div className="card">
-          <span class="position-absolute top-0  translate-middle badge rounded-pill bg-danger" style={{left:"88%", zIndex:"1"}}>
+          <div>
+          <span class="badge rounded-pill bg-danger" style={{
+            display:"flex",
+            justifyContent:"flex-end",
+            position:"absolute",
+            right:"0"
+          }}>
             {source}
             <span class="visually-hidden">unread messages</span>
           </span>
+          </div>
           <img
             src={
               imageUrl === null

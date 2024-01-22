@@ -26,28 +26,23 @@ export class News extends Component {
     document.title = `NewsHub -  ${this.props.category[0].toUpperCase() + this.props.category.slice(1)}`;
   }
   async updateNews(){
+    this.props.setLoading(5);
     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=83d9a86f7e7c4b9a9b0ec6c96d9c4cb8&page=${this.state.page}&pageSize=15`
     this.setState({loading:true});
 
     let data = await fetch(url);
+    this.props.setLoading(40);
     let parsedData = await data.json();
+    this.props.setLoading(70);
     this.setState({
         articles:parsedData.articles,
         totalResults:parsedData.totalResults,
         loading:false
         });
+    this.props.setLoading(100);
   }
   async componentDidMount(){
       this.updateNews();
-  }
-  handleNext = async()=>{
-    this.setState({page:this.state.page+1});
-    this.updateNews();
-    
-  }
-  handlePrev = async()=>{
-    this.setState({page:this.state.page-1});
-    this.updateNews();
   }
   fetchMoreData = async()=>{
       this.setState({page:this.state.page+1});
