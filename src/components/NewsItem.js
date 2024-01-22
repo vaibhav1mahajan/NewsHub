@@ -29,7 +29,7 @@ export class NewsItem extends Component {
                 {new Date(date).toUTCString()}
               </small>
             </p>
-            <a href={newsUrl} target="_blank" className="btn btn-sm btn-dark">
+            <a href={newsUrl} target="_blank" rel="noreferrer" className="btn btn-sm btn-dark">
               Read More
             </a>
           </div>

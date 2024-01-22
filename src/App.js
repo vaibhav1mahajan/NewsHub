@@ -1,12 +1,10 @@
-import { useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 // import News from './components/News'
 import {
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import News from './components/News';
 
