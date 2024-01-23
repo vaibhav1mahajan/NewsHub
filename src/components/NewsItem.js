@@ -8,14 +8,14 @@ export class NewsItem extends Component {
       <div>
         <div className="card">
           <div>
-          <span class="badge rounded-pill bg-danger" style={{
+          <span className="badge rounded-pill bg-danger" style={{
             display:"flex",
             justifyContent:"flex-end",
             position:"absolute",
             right:"0"
           }}>
             {source}
-            <span class="visually-hidden">unread messages</span>
+            <span className="visually-hidden">unread messages</span>
           </span>
           </div>
           <img
