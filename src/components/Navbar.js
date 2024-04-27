@@ -3,6 +3,7 @@ import {
   Link
 } from "react-router-dom";
 
+// comment form window
 export class Navbar extends Component {
   static propTypes = {
 
